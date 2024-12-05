@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #e0f7fa;
+    color: #0d47a1; 
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+html, body, app-root {
+    height: 100%;
+}
+
+mat-drawer-container {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}

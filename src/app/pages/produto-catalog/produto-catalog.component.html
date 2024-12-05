@@ -1,0 +1,6 @@
+<div class="container">
+  <app-produto-card *ngFor="let produtoObj of produtosArray; trackBy: trackByProdutoId" [produto]="produtoObj"></app-produto-card>
+  <ng-container *ngIf="produtosArray.length === 0">
+    <h2>Não há produtos registrados no momento!</h2>
+  </ng-container>
+</div>

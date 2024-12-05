@@ -1,0 +1,43 @@
+<form [formGroup]="produtoForm" (ngSubmit)="submitForm()">
+    <h3>Adicionar novo produto ao Catálogo</h3>
+    <mat-form-field appearance="fill">
+      <mat-label>Título</mat-label>
+      <input matInput formControlName="title"/>
+      <mat-error>Título é obrigatório</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Subtítulo</mat-label>
+      <input matInput formControlName="subtitle"/>
+      <mat-error>Subtítulo é obrigatório</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Link da Imagem</mat-label>
+      <input matInput formControlName="imagemlink"/>
+      <mat-error>Link da imagem é obrigatório</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Preço</mat-label>
+      <input matInput type="number" formControlName="price"/>
+      <mat-error>Preço é obrigatório</mat-error>
+      <mat-error>Preço deve ser um número positivo</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Descrição</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+      <mat-error>Descrição é obrigatória</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Disponível em Estoque</mat-label>
+      <input matInput type="number" formControlName="availableInStock"/>
+      <mat-error>Quantidade em estoque é obrigatória</mat-error>
+      <mat-error>Estoque deve ser um número positivo</mat-error>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit">Enviar</button>
+  </form>
+  

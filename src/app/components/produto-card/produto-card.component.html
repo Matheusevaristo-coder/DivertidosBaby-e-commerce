@@ -1,0 +1,16 @@
+<mat-card *ngIf="produto" class="produto-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>{{ produto.title }}</mat-card-title>
+    <mat-card-subtitle>{{ produto.subtitle }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="produto.imagemlink" [alt]="'Photo of ' + produto.title">
+  <mat-card-content>
+    <b>{{ produto.price | currency:'BRL' }}</b>
+    <p>{{ produto.description }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-icon-button (click)="addProdutoToCart(produto)">
+      <mat-icon>add_shopping_cart</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
