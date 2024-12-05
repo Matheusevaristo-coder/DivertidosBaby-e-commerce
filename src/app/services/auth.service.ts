@@ -1,29 +1,22 @@
-import { inject, Injectable } from '@angular/core';
-import { UserService } from './user.service'; 
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private userService: UserService;
-  constructor() {
-    this.userService = inject(UserService);
-  }
+  private authenticated = false;
 
-  isAuthenticated(): boolean {
-    const loggedUser = JSON.parse(localStorage.getItem("loggedUser") || "null");
-    return loggedUser != null;
-  }
+  constructor() { }
 
-  loginUser(email: string, password: string) {
-    if (email === "admin@admin.com" && password === "admin123") {
-      localStorage.setItem("loggedUser", JSON.stringify({ email, password }));
+  async loginUser(email: string, password: string): Promise<boolean> {
+    if (email.includes('@')) {
+      this.authenticated = true;
       return true;
     }
     return false;
   }
 
-  logoutUser() {
-    localStorage.removeItem("loggedUser");
+  isAuthenticated(): boolean {
+    return this.authenticated;
   }
 }

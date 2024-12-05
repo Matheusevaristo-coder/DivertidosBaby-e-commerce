@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common'; 
+import { CommonModule } from '@angular/common';
 import { ProdutoService } from '../../services/produto.service';
 import { ProdutoCardComponent } from '../../components/produto-card/produto-card.component';
 import { Produto } from '../../models/produto';
@@ -41,7 +41,6 @@ export class ProdutoCatalogComponent {
       description: "Transforme seu pequeno no super-herói favorito! Nossa fantasia é feita com tecidos de alta qualidade para garantir conforto e diversão. 🦸",
       availableInStock: 15
     }
-
   ];
 
   constructor() {

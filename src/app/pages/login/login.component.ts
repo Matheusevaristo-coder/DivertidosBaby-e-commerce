@@ -49,17 +49,9 @@ export class LoginComponent {
   }
 
   async submitForm() {
-    if (!this.loginForm.valid) {
-      this.updateEmailErrorMessage();
-      this.passwordError = this.loginForm.get('password')?.hasError('required')
-        ? 'Campo senha deve ser preenchido'
-        : '';
-      return;
-    }
-
     try {
-      const email = this.loginForm.get('email')?.value || '';
-      const password = this.loginForm.get('password')?.value || '';
+      const email = this.loginForm.get('email')?.value;
+      const password = this.loginForm.get('password')?.value;
 
       const loggedIn = await this.authService.loginUser(email, password);
 
