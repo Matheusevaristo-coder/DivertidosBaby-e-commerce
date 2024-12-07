@@ -14,7 +14,7 @@ import { MatDrawer } from '@angular/material/sidenav';
 })
 export class HeaderComponent {
   @Input() drawer!: MatDrawer;
-  title: string = "Catálogo de Produtos";
+  title: string = "Divertidos Baby";
 
   openCart() {
     this.drawer.toggle();
